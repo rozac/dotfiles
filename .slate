@@ -1,0 +1,52 @@
+alias hyper shift;alt;cmd
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config defaultToCurrentScreen true
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# Aliases
+alias browser 'Google Chrome'
+alias editor 'TextWrangler'
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+# Moving positions
+bind 1:${hyper} ${full}
+bind 2:${hyper} ${lefthalf}
+bind 5:${hyper} push bottom bar-resize:screenSizeY/2
+bind 4:${hyper} push top bar-resize:screenSizeY/2
+bind 3:${hyper} ${righthalf}
+#bind r:${hyper} ${topleft}
+#bind t:${hyper} ${topright}
+#bind f:${hyper} ${bottomleft}
+#bind g:${hyper} ${bottomright}
+
+# Window Hints
+bind v:${hyper} hint
+
+# Focus Bindings
+bind right:${hyper}    focus right
+bind left:${hyper}     focus left
+bind up:${hyper}       focus up
+bind down:${hyper}     focus down
+bind up:cmd;alt   focus behind
+bind down:cmd;alt focus behind
+
+# App bindings
+bind w:${hyper} focus 'TextWrangler'
+bind c:${hyper} focus 'Google Chrome'
+bind r:${hyper} focus 'iTerm'
+bind q:${hyper} focus 'PyCharm'
+bind f:${hyper} focus 'Finder'
+bind s:${hyper} focus 'Microsoft Outlook'
+bind e:${hyper} focus 'Evernote'
+bind a:${hyper} focus 'Adium'
